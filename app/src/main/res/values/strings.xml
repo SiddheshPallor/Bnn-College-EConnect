@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Bnn College</string>
+
+    <string name="bold" tools:ignore="ReferenceType">@font/latobold</string>
+    <string name="light" tools:ignore="ReferenceType">@font/latolight</string>
+    <string name="regular" tools:ignore="ReferenceType">@font/latoregular</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+
+    <string name="college_Address">Varaladevi Road,Dhamankar Naka,Bhiwandi, Dist: Thane,Maharashtra - 421305</string>
+
+    <string name="about_college">Bhiwandi Nizampur Nagarpalika College, Bhiwandi derives its nomenclature from the twin cities—Bhiwandi and Nizampur-also, as it was mainly financed by the then Nagarpalika (the Municipal Corporation); hence, it was named after the prime donor. This institution was founded by the social activists, educationists and political leaders of the 1960s. These leaders and social activists were heterogeneous, representing almost all castes and cadres of society</string>
+
+    <string name="about_bnn">It gives me immense pleasure to introduce you B.N.N. College, Bhiwandi as the Principal. B.N.N. College, Bhiwandi is celebrating its Golden Jubilee Year in the academic year 2015-16. The college has been a witness of the cultural, social, political, communal and educational development of Bhiwandi city. It has catered higher education to masses and generations.</string>
+
+    <string-array name="theme">
+        <item> Default Settings </item>
+        <item> Dark </item>
+        <item> Light </item>
+    </string-array>
+
+</resources>
