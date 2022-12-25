@@ -25,7 +25,7 @@ import java.util.List;
 
 public class GalleryFragment extends Fragment {
 
-    RecyclerView republicDay, independenceDay, convocation, ncc, otherEvents;
+    RecyclerView republicDay, independenceDay, convocation, anualGathering, otherEvents;
     GalleryAdapter adapter;
 
     DatabaseReference reference;
@@ -40,7 +40,7 @@ public class GalleryFragment extends Fragment {
         republicDay = view.findViewById(R.id.republicDay);
         independenceDay = view.findViewById(R.id.independenceDay);
         convocation = view.findViewById(R.id.convocation);
-        ncc = view.findViewById(R.id.ncc);
+        anualGathering = view.findViewById(R.id.annualGathering);
         otherEvents = view.findViewById(R.id.otherEvents);
 
         reference = FirebaseDatabase.getInstance().getReference().child("gallery");
@@ -48,9 +48,8 @@ public class GalleryFragment extends Fragment {
         getRepublicDayImg();
         getIndependenceDayImg();
         getConvocationImg();
-        getNccImg();
+        getAnnualgatheringImg();
         getotherEvents();
-
         return view;
     }
 
@@ -111,9 +110,9 @@ public class GalleryFragment extends Fragment {
         });
     }
 
-    private void getNccImg() {
+    private void getAnnualgatheringImg() {
 
-        reference.child("NCC").addValueEventListener(new ValueEventListener() {
+        reference.child("Annual Social Gathering").addValueEventListener(new ValueEventListener() {
 
             List<String> imageList = new ArrayList<>();
 
@@ -127,8 +126,8 @@ public class GalleryFragment extends Fragment {
                 adapter = new GalleryAdapter(getContext(),imageList);
                 // setting layout in recycler View
 
-                ncc.setLayoutManager(new GridLayoutManager(getContext(),3));
-                ncc.setAdapter(adapter);
+                anualGathering.setLayoutManager(new GridLayoutManager(getContext(),3));
+                anualGathering.setAdapter(adapter);
             }
 
             @Override
