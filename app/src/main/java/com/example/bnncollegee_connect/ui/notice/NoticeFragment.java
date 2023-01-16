@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bnncollegee_connect.R;
+import com.facebook.shimmer.Shimmer;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,7 +36,8 @@ public class NoticeFragment extends Fragment {
 
     private DatabaseReference reference;
 
-
+    ShimmerFrameLayout shimmerFrameLayout;
+    LinearLayout shimmerLayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,15 +46,29 @@ public class NoticeFragment extends Fragment {
 
 
         deleteNoticefromRecyclerView = view.findViewById(R.id.deleteNoticefromRecyclerView);
-        progressBar = view.findViewById(R.id.progressBar);
+        //progressBar = view.findViewById(R.id.progressBar);
         reference = FirebaseDatabase.getInstance().getReference().child("Notice");
 
         deleteNoticefromRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         deleteNoticefromRecyclerView.setHasFixedSize(true);
 
+        shimmerFrameLayout = view.findViewById(R.id.shimmer_view_container);
+        shimmerLayout = view.findViewById(R.id.shimmerLayout);
         getNotice();
 
         return view;
+    }
+
+    @Override
+    public void onPause() {
+        shimmerFrameLayout.stopShimmer();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        shimmerFrameLayout.startShimmer();
+        super.onResume();
     }
 
     private void getNotice() {
@@ -65,8 +83,11 @@ public class NoticeFragment extends Fragment {
 
                 adapter = new NoticeAdapter(getContext(), list);
                 adapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
+                //progressBar.setVisibility(View.GONE);
                 deleteNoticefromRecyclerView.setAdapter(adapter);
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
+
             }
 
             @Override
@@ -74,6 +95,9 @@ public class NoticeFragment extends Fragment {
                 Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
 }
 

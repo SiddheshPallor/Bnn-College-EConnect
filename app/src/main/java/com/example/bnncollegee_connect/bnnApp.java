@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.onesignal.OneSignal;
 
+// This is code is for notification from the website known as OneSignal!
+
 public class bnnApp extends Application {
 
     private static final String ONESIGNAL_APP_ID = "69119db9-698f-4acf-9edb-0f323e73be94";
