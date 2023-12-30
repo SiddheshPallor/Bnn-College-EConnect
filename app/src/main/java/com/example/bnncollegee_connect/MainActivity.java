@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.navigation_video:
-                Intent intent1 = new Intent(Intent.ACTION_VIEW,Uri.parse("https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ"));
+                Intent intent1 = new Intent(Intent.ACTION_VIEW,Uri.parse("https://youtube.com/@DepartmentofEnglishBNNCollegeB"));
                 startActivity(intent1);
                 break;
 
