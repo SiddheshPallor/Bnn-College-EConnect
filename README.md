@@ -40,7 +40,7 @@ It provides an overview about the campus to students, such as the University's h
 <img src="https://user-images.githubusercontent.com/90856180/208837351-4509e13d-8687-409c-9f06-7f2295f33336.png" width="300" height="700"> <img src="https://user-images.githubusercontent.com/90856180/208837416-ed2464c5-3cdf-4f4b-8a17-cd02a133bc2d.png" width="300" height="700">
 
  
-<img src="https://user-images.githubusercontent.com/90856180/208837432-7c9c89e1-a08c-43cc-9284-c3a1f740e8e9.png" width="300" height="700"> <img src="https://user-images.githubusercontent.com/90856180/208837472-63c9a1d8-8115-4909-9c8e-ef0e2e2077ba.png" width="300" height="700">
+
 
 
 
